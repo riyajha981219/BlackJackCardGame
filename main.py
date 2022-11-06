@@ -128,8 +128,8 @@ class Game:
         if choice in ["hit","h"]:
           playerHand.addCard(deck.deal(1))
           playerHand.display()
-      if self.checkWinner(playerHand, dealerHand):
-        continue  
+        if self.checkWinner(playerHand, dealerHand):
+          continue  
 
       playerHandValue= playerHand.getValue()
       dealerHandValue= dealerHand.getValue()
@@ -144,7 +144,7 @@ class Game:
       print("Your Hand: ", playerHandValue)
       print("Dealer's Hand: ", dealerHandValue)
       self.checkWinner(playerHand, dealerHand, True)
-    print("\nThanks for playing!")
+      print("\nThanks for playing!")
   def checkWinner(self, playerHand, dealerHand, gameOver = False):
     if not gameOver:
       if playerHand.getValue()>21:
